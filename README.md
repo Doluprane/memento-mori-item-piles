@@ -9,3 +9,18 @@ The module is set up out-of-the-box for dnd5e and systems which use the same pat
 Icons from game-icons.net
 
 Bleeding Wound and Pirate grave icon by [Lorc](https://lorcblog.blogspot.com/) under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/), from http://game-icons.net
+
+# The fork
+
+This fork has been originally made to add ItemPiles integration inside Memento Mori under FoundryVTT.
+Basically, when an actor is dying it will be marked as dying (normal behavior of Memento Mori) and the token will be lootable (ItemPiles integration).
+
+Thank you FantasyCalendar and BadIdeasBureau for the amazing work.
+
+Item Piles:
+- https://github.com/fantasycalendar/FoundryVTT-ItemPiles
+- https://foundryvtt.com/packages/item-piles
+
+Memento Mori:
+- https://github.com/BadIdeasBureau/memento-mori
+- https://foundryvtt.com/packages/memento-mori

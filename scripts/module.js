@@ -151,8 +151,23 @@ async function updateActor(actor, update){
             dead = hp >= compareTo;
             break
     }
-    if(dead) await addEffect(actor)
-    if(!dead && hp) await removeEffects(actor) //only remove if not dead and if hp exists, to avoid false removal
+
+    if(dead)
+    { 
+        if (actor.isToken)
+        {
+            game.itempiles.API.turnTokensIntoItemPiles(actor.token);
+        }
+        await addEffect(actor)
+    }
+    if(!dead && hp) 
+    {
+        if (actor.isToken)
+        {
+            game.itempiles.API.revertTokensFromItemPiles(actor.token)
+        }
+        await removeEffects(actor) //only remove if not dead and if hp exists, to avoid false removal
+    }
 }
 Hooks.on("ready", () => {
     if (game.user.isGM) Hooks.on("updateActor", updateActor)
